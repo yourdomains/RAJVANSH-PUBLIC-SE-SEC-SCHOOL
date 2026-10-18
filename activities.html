@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070e1c">
+  <meta name="description" content="Activities & Co-Curricular Programs at Rajvansh Public Senior Secondary School - STEM, Robotics, Dance, Yoga, Sports, and Social Leadership.">
+  <title>Activities & STEM Hub | Rajvansh Public Senior Secondary School</title>
+  
+  <link rel="stylesheet" href="css/style3d.css">
+  <link rel="icon" type="image/png" href="assets/school-logo.png">
+</head>
+<body>
+
+  <!-- Custom 3D Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Background Ambient Glow Orbs -->
+  <div class="bg-ambient">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+
+  <!-- Top Announcement Bar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-highlight">
+        <span class="pulse-dot"></span>
+        <span>Learning Beyond Textbooks • Experiential Discovery Every Day</span>
+      </div>
+      <div class="topbar-actions">
+        <button id="theme-toggle-btn" class="theme-pill" title="Toggle 3D Color Theme">🎨 Theme: Cosmic</button>
+        <button id="sound-toggle-btn" class="sound-pill" title="Toggle Sound Effects">🔊 Sound: On</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-logo-wrap">
+          <img src="assets/school-logo.png" alt="Rajvansh Public School Emblem">
+        </div>
+        <div class="brand-text">
+          <span>RAJVANSH PUBLIC</span>
+          <small>Senior Secondary School</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+      <nav class="navlinks" id="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About School</a>
+        <a href="activities.html" class="active">Activities & STEM</a>
+        <a href="index.html#cube-showcase">3D Cube</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="index.html#admissions" class="btn gold" style="padding: 9px 20px; font-size: 0.86rem;">Admissions 3D ✨</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Activities Hero -->
+    <section style="padding: 70px 0 40px;">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">✦ Co-Curricular & Experiential Programs</div>
+          <h2>Where Passion Meets Purpose</h2>
+          <p>
+            We provide a diverse ecosystem of activities designed to unlock athletic prowess, creative artistry, technological mastery, and community service.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities Grid with 3D Tilt -->
+    <section style="padding: 20px 0 80px;">
+      <div class="container">
+        <div class="cards-3d-grid">
+          
+          <!-- Activity 1 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/science-lab.jpg" alt="Science Laboratory Experiments">
+                <span class="card-badge-3d">Innovation</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Hands-On Science & Experiments</h3>
+                <p>
+                  Equipped with modern apparatus for physics mechanics, chemical syntheses, and biological specimen analysis. Students learn the scientific method through active testing.
+                </p>
+                <div class="zone-tags" style="margin-top: 10px;">
+                  <span class="zone-tag">Chemical Lab</span>
+                  <span class="zone-tag">Optics</span>
+                  <span class="zone-tag">Live Models</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 2 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/computer-learning.jpg" alt="Computer Learning & AI">
+                <span class="card-badge-3d">Future Skills</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Computer Coding & Artificial Intelligence</h3>
+                <p>
+                  Students learn computational logic, visual programming, Python syntax, and basics of machine learning, preparing them for higher academic technological challenges.
+                </p>
+                <div class="zone-tags" style="margin-top: 10px;">
+                  <span class="zone-tag">Python</span>
+                  <span class="zone-tag">Smart Lab</span>
+                  <span class="zone-tag">Algorithms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 3 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/dance-session.jpg" alt="Classical & Folk Dance">
+                <span class="card-badge-3d">Arts & Culture</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Dance, Drama & Cultural Expression</h3>
+                <p>
+                  Training in Indian classical and folk dance forms along with Western contemporary choreography. Enhances bodily flexibility, stage confidence, and aesthetic grace.
+                </p>
+                <div class="zone-tags" style="margin-top: 10px;">
+                  <span class="zone-tag">Classical Dance</span>
+                  <span class="zone-tag">Folk Arts</span>
+                  <span class="zone-tag">Stage Presence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 4 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/yoga-classes.jpg" alt="Yoga & Mindfulness Practice">
+                <span class="card-badge-3d">Mind & Body</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Yoga, Pranayama & Mindfulness</h3>
+                <p>
+                  Daily outdoor yoga sessions focusing on Surya Namaskar, respiratory calm, concentration exercises, and emotional stability to alleviate academic anxiety.
+                </p>
+                <div class="zone-tags" style="margin-top: 10px;">
+                  <span class="zone-tag">Asanas</span>
+                  <span class="zone-tag">Meditation</span>
+                  <span class="zone-tag">Daily Focus</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 5 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/reading-session.jpg" alt="Reading & Library Habits">
+                <span class="card-badge-3d">Language Arts</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Literary Circles & Public Oratory</h3>
+                <p>
+                  Interactive reading circles, debates, essay competitions, and storytelling symposiums designed to make every child an articulate, persuasive communicator.
+                </p>
+                <div class="zone-tags" style="margin-top: 10px;">
+                  <span class="zone-tag">Debating</span>
+                  <span class="zone-tag">Creative Writing</span>
+                  <span class="zone-tag">Book Club</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 6 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/gross-motor.jpg" alt="Gross Motor Skills">
+                <span class="card-badge-3d">Kinesthetics</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Play Therapy & Gross Motor Skills</h3>
+                <p>
+                  Specialized balance obstacle circuits, ball coordination games, and agility drills tailored for primary students to cultivate healthy physical growth.
+                </p>
+                <div class="zone-tags" style="margin-top: 10px;">
+                  <span class="zone-tag">Coordination</span>
+                  <span class="zone-tag">Agility</span>
+                  <span class="zone-tag">Outdoor Fun</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 7 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/creative-activity.jpg" alt="Fine Arts & Craft">
+                <span class="card-badge-3d">Fine Arts</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Visual Arts, Painting & Craftwork</h3>
+                <p>
+                  Watercolour, clay modelling, origami, and architectural sketching where students transform boundless raw imagination into colourful physical creations.
+                </p>
+                <div class="zone-tags" style="margin-top: 10px;">
+                  <span class="zone-tag">Sketching</span>
+                  <span class="zone-tag">Clay Modeling</span>
+                  <span class="zone-tag">Exhibitions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 8 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/nss-programme.jpg" alt="Social Impact & NSS">
+                <span class="card-badge-3d">Leadership</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>National Service Scheme (NSS)</h3>
+                <p>
+                  Community empowerment campaigns, environmental tree planting, sanitation awareness drives, and disaster relief preparedness workshops.
+                </p>
+                <div class="zone-tags" style="margin-top: 10px;">
+                  <span class="zone-tag">Community</span>
+                  <span class="zone-tag">Green Drives</span>
+                  <span class="zone-tag">Civic Pride</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity 9 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/play-session.jpg" alt="Team Sports & Recreation">
+                <span class="card-badge-3d">Athletics</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Competitive Team Sports & Athletics</h3>
+                <p>
+                  Football tournaments, cricket training nets, badminton courts, track sprinting, and intra-school championship trophies under certified sports instructors.
+                </p>
+                <div class="zone-tags" style="margin-top: 10px;">
+                  <span class="zone-tag">Football</span>
+                  <span class="zone-tag">Cricket</span>
+                  <span class="zone-tag">Track & Field</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 55px;">
+          <a href="index.html#admissions" class="btn gold" style="padding: 14px 34px;">
+            <span>Enrol in Rajvansh Programs Today ✨</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand">
+            <div class="brand-logo-wrap">
+              <img src="assets/school-logo.png" alt="Rajvansh Public School">
+            </div>
+            <div class="brand-text">
+              <span>RAJVANSH PUBLIC</span>
+              <small>Senior Secondary School</small>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Empowering students with holistic academic depth, technological proficiency, ethical virtues, and athletic strength.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="index.html">🏠 Home Portal</a>
+            <a href="about.html">🏛️ About Our Legacy</a>
+            <a href="activities.html">🔬 STEM & Activities</a>
+            <a href="gallery.html">📸 3D Photo Vault</a>
+            <a href="index.html#admissions">📋 Admissions 2026</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact Campus</h3>
+          <div class="footer-links">
+            <span style="color: var(--text-muted); font-size: 0.92rem;">📍 Central Campus, Senior Wing</span>
+            <span style="color: var(--text-muted); font-size: 0.92rem;">📞 +91 98765 43210</span>
+            <span style="color: var(--text-muted); font-size: 0.92rem;">✉️ admissions@rajvanshschool.edu.in</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span id="year"></span> Rajvansh Public Senior Secondary School.</div>
+        <a href="index.html" style="color: var(--accent-cyan);">Back to 3D Home Portal ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/gsap.min.js"></script>
+  <script src="js/3d-interactions.js"></script>
+</body>
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070e1c">
+  <meta name="description" content="Rajvansh Public Senior Secondary School - Experience our 3D interactive campus, world-class academics, science laboratories, arts and sports.">
+  <title>Rajvansh Public Senior Secondary School | 3D Interactive Campus Experience</title>
+  
+  <link rel="stylesheet" href="css/style3d.css">
+  <link rel="icon" type="image/png" href="assets/school-logo.png">
+</head>
+<body>
+
+  <!-- Custom 3D Cursor Elements -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Background Ambient Glow Orbs -->
+  <div class="bg-ambient">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+
+  <!-- Top Announcement Bar -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-highlight">
+        <span class="pulse-dot"></span>
+        <span>Admissions Open for Academic Session 2026-27 • Nurturing Tomorrow's Leaders</span>
+      </div>
+      <div class="topbar-actions">
+        <button id="theme-toggle-btn" class="theme-pill" title="Toggle 3D Color Theme">🎨 Theme: Cosmic</button>
+        <button id="sound-toggle-btn" class="sound-pill" title="Toggle Sound Effects">🔊 Sound: On</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky 3D Glass Header -->
+  <header>
+    <div class="container nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <div class="brand-logo-wrap">
+          <img src="assets/school-logo.png" alt="Rajvansh Public School Emblem">
+        </div>
+        <div class="brand-text">
+          <span>RAJVANSH PUBLIC</span>
+          <small>Senior Secondary School</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <nav class="navlinks" id="navlinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About School</a>
+        <a href="activities.html">Activities & STEM</a>
+        <a href="#cube-showcase">3D Cube</a>
+        <a href="#campus-tour">Campus Explorer</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#admissions" class="btn gold" style="padding: 9px 20px; font-size: 0.86rem;">Admissions 3D ✨</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =============================================================
+         3D HERO SECTION WITH WEBGL THREE.JS CANVAS
+         ============================================================= -->
+    <section class="hero-3d" id="home">
+      <div class="container hero-layout">
+        
+        <div class="hero-text-content">
+          <div class="hero-badge">
+            <span>✦ 3D INTERACTIVE SCHOOL OF EXCELLENCE</span>
+          </div>
+
+          <h1 class="hero-title">
+            Every Child Has A Story. <br>
+            <span class="highlight-gold">Let Yours Begin In 3D.</span>
+          </h1>
+
+          <p class="hero-desc">
+            At Rajvansh Public Senior Secondary School, we ignite curious young minds through cutting-edge STEM discovery, creative arts, mindfulness, and whole-child leadership. Step into our world of 3D discovery.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#campus-tour" class="btn gold">
+              <span>🚀 Explore 3D Campus</span>
+            </a>
+            <a href="#cube-showcase" class="btn outline">
+              <span>🎲 View 3D Photo Cube</span>
+            </a>
+            <a href="activities.html" class="btn" style="background: rgba(255,255,255,0.08); border-color: var(--border-glass);">
+              <span>Curriculum & Life →</span>
+            </a>
+          </div>
+
+          <div class="hero-features">
+            <div class="hf-item">
+              <div class="hf-icon">🏆</div>
+              <div class="hf-text">
+                <strong>CBSE Excellence</strong>
+                <small>Proven Academic Record</small>
+              </div>
+            </div>
+            <div class="hf-item">
+              <div class="hf-icon">🤖</div>
+              <div class="hf-text">
+                <strong>Modern Labs & AI</strong>
+                <small>Future-ready learning</small>
+              </div>
+            </div>
+            <div class="hf-item">
+              <div class="hf-icon">🌱</div>
+              <div class="hf-text">
+                <strong>Holistic Care</strong>
+                <small>Sports, Arts & Values</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Three.js WebGL Interactive Canvas -->
+        <div class="hero-3d-canvas-wrap">
+          <canvas id="webgl-hero-canvas"></canvas>
+
+          <div class="floating-3d-badge">
+            <span class="star-icon">⭐</span>
+            <div>
+              <strong>Premier Education</strong>
+              <small>3D Digital Campus 2026</small>
+            </div>
+          </div>
+
+          <div class="canvas-overlay-controls">
+            <div class="canvas-hint">
+              <span>✨ Drag to rotate • Click for shockwave</span>
+            </div>
+            <div class="canvas-buttons">
+              <button id="btn-color-3d" class="canvas-btn" title="Cycle 3D Color Mode">🎨 Light</button>
+              <button id="btn-speed-3d" class="canvas-btn" title="Toggle Rotation Speed">⚡ 1x</button>
+              <button id="btn-reset-3d" class="canvas-btn" title="Reset 3D View">↺ Reset</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================================
+         3D STATS COUNTER BAR
+         ============================================================= -->
+    <div class="stats-section">
+      <div class="container">
+        <div class="stats-card-3d">
+          <div class="stat-box">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Senior Secondary Success</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">25+</div>
+            <div class="stat-label">Expert & Passionate Mentors</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">Modern Labs & Co-Curriculars</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">1000+</div>
+            <div class="stat-label">Thriving Young Learners</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =============================================================
+         3D INTERACTIVE PHOTO CUBE SHOWCASE
+         ============================================================= -->
+    <section class="cube-showcase-section" id="cube-showcase">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="kicker">✦ Hands-On Spatial Exploration</div>
+          <h2>Interact With Our School In 3D</h2>
+          <p>Spin the interactive 3D Cube using your mouse or touch gestures to view different facets of student life at Rajvansh.</p>
+        </div>
+
+        <div class="cube-showcase-layout">
+          <div class="cube-copy">
+            <h3>Multifaceted Learning for Every Aspiring Mind</h3>
+            <p>
+              Just like this 3D cube, education at Rajvansh has diverse dimensions. From immersive laboratory science to digital coding, creative dance rhythms, and joyous outdoor play, every side represents an inspiring journey.
+            </p>
+
+            <div class="cube-pills">
+              <button class="cube-pill active" data-face="front">Classroom</button>
+              <button class="cube-pill" data-face="back">Computer & AI</button>
+              <button class="cube-pill" data-face="left">Science Lab</button>
+              <button class="cube-pill" data-face="right">Dance & Arts</button>
+              <button class="cube-pill" data-face="top">Assembly</button>
+              <button class="cube-pill" data-face="bottom">Sports Play</button>
+            </div>
+
+            <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+              <button id="cube-toggle-spin" class="btn outline" style="padding: 10px 22px;">⏸ Pause Auto-Spin</button>
+              <a href="gallery.html" class="btn gold" style="padding: 10px 22px;">Full Photo Gallery →</a>
+            </div>
+          </div>
+
+          <!-- The Actual 3D CSS Cube -->
+          <div class="cube-container-wrapper">
+            <div class="cube-viewport">
+              <div class="cube-3d" id="cube3d">
+                <!-- Front -->
+                <div class="cube-face face-front">
+                  <img src="assets/classroom-activity.jpg" alt="Active Classrooms">
+                  <div class="cube-face-label">
+                    <strong>Active Classrooms</strong>
+                    <small>Engaging Discussions & Growth</small>
+                  </div>
+                </div>
+                <!-- Back -->
+                <div class="cube-face face-back">
+                  <img src="assets/computer-learning.jpg" alt="Computer & AI Learning">
+                  <div class="cube-face-label">
+                    <strong>Computer & AI Lab</strong>
+                    <small>Digital Mastery & Coding</small>
+                  </div>
+                </div>
+                <!-- Left -->
+                <div class="cube-face face-left">
+                  <img src="assets/science-lab.jpg" alt="Science Laboratory">
+                  <div class="cube-face-label">
+                    <strong>Science Laboratory</strong>
+                    <small>Hands-on Chemistry & Physics</small>
+                  </div>
+                </div>
+                <!-- Right -->
+                <div class="cube-face face-right">
+                  <img src="assets/dance-session.jpg" alt="Dance & Cultural Arts">
+                  <div class="cube-face-label">
+                    <strong>Dance & Cultural Arts</strong>
+                    <small>Rhythm, Grace & Expression</small>
+                  </div>
+                </div>
+                <!-- Top -->
+                <div class="cube-face face-top">
+                  <img src="assets/morning-assembly.jpg" alt="Morning Assembly">
+                  <div class="cube-face-label">
+                    <strong>Morning Assembly</strong>
+                    <small>Unity, Prayer & Discipline</small>
+                  </div>
+                </div>
+                <!-- Bottom -->
+                <div class="cube-face face-bottom">
+                  <img src="assets/play-session.jpg" alt="Outdoor Play & Fitness">
+                  <div class="cube-face-label">
+                    <strong>Play & Motor Skills</strong>
+                    <small>Joyful Childhood Movement</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cube Rotation Buttons -->
+            <div class="cube-controls-ui">
+              <button id="cube-prev" class="cube-ctrl-btn" title="Rotate Left">◂</button>
+              <span style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">Drag with mouse to free-rotate 360°</span>
+              <button id="cube-next" class="cube-ctrl-btn" title="Rotate Right">▸</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================================
+         3D INTERACTIVE CAMPUS EXPLORER (VIRTUAL TOUR)
+         ============================================================= -->
+    <section class="campus-tour-section" id="campus-tour">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="kicker">✦ Interactive Virtual Tour</div>
+          <h2>Explore The Campus In Real-Time</h2>
+          <p>Click on any pulsing 3D radar hotspot on our campus map to instantly inspect key learning zones.</p>
+        </div>
+
+        <div class="campus-interactive-wrap">
+          <div class="campus-map-display">
+            <img src="assets/classroom-activity.jpg" alt="Campus Overview" class="campus-bg-img">
+
+            <!-- Interactive Hotspot Pins -->
+            <div class="campus-hotspot hotspot-1 active" data-zone="1" title="Science & Robotics Lab">
+              <div class="hotspot-radar"></div>
+              <div class="hotspot-pin">🔬</div>
+            </div>
+
+            <div class="campus-hotspot hotspot-2" data-zone="2" title="Computer & Digital Lab">
+              <div class="hotspot-radar"></div>
+              <div class="hotspot-pin">💻</div>
+            </div>
+
+            <div class="campus-hotspot hotspot-3" data-zone="3" title="Classrooms & Library">
+              <div class="hotspot-radar"></div>
+              <div class="hotspot-pin">📖</div>
+            </div>
+
+            <div class="campus-hotspot hotspot-4" data-zone="4" title="Arts & Dance Pavilion">
+              <div class="hotspot-radar"></div>
+              <div class="hotspot-pin">🎭</div>
+            </div>
+
+            <div class="campus-hotspot hotspot-5" data-zone="5" title="Athletics & Yoga Arena">
+              <div class="hotspot-radar"></div>
+              <div class="hotspot-pin">⚽</div>
+            </div>
+
+            <!-- Floating Details Card -->
+            <div class="campus-zone-card">
+              <h4 id="zone-title">🔬 Science & Robotics Innovation Lab</h4>
+              <p id="zone-desc">Equipped with digital microscopes, IoT sensors, chemistry workbenches and AI learning stations where theory meets live experiments.</p>
+              <div class="zone-tags" id="zone-tags">
+                <span class="zone-tag">Physics</span>
+                <span class="zone-tag">Chemistry</span>
+                <span class="zone-tag">Robotics</span>
+                <span class="zone-tag">Hands-on Experiments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================================
+         3D TILT PROGRAM CARDS
+         ============================================================= -->
+    <section class="programs-section" id="programs">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="kicker">✦ Comprehensive Holistic Education</div>
+          <h2>Academic & Co-Curricular Excellence</h2>
+          <p>Hover over the cards to experience real-time 3D depth tilt, specular reflections, and layer parallax.</p>
+        </div>
+
+        <div class="cards-3d-grid">
+          
+          <!-- Card 1 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/reading-session.jpg" alt="Reading & Language">
+                <span class="card-badge-3d">Foundation</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Reading & Language Arts</h3>
+                <p>Nurturing fluent articulation, imaginative vocabulary, bilingual literature comprehension, and critical analysis habits.</p>
+                <a href="activities.html" class="card-link-3d">Explore Language Program →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/computer-learning.jpg" alt="Computer Learning">
+                <span class="card-badge-3d">STEM / AI</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Computer Science & AI</h3>
+                <p>Equipping students with algorithmic thinking, Python programming, digital literacy, and responsible cyber ethics.</p>
+                <a href="activities.html" class="card-link-3d">Discover Tech Labs →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/science-lab.jpg" alt="Science Laboratory">
+                <span class="card-badge-3d">Discovery</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Practical Science Labs</h3>
+                <p>Transforming complex textbook theories into tangible empirical discoveries through well-supervised experimental work.</p>
+                <a href="activities.html" class="card-link-3d">View Science Labs →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/dance-session.jpg" alt="Dance & Culture">
+                <span class="card-badge-3d">Creativity</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Dance & Performing Arts</h3>
+                <p>Celebrating rich cultural traditions, rhythm, stage presence, emotional balance, and collaborative creative expression.</p>
+                <a href="activities.html" class="card-link-3d">See Cultural Shows →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/yoga-classes.jpg" alt="Yoga & Wellbeing">
+                <span class="card-badge-3d">Mindfulness</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Yoga & Mental Wellbeing</h3>
+                <p>Cultivating concentration, physical flexibility, mindful breathing techniques, and calm emotional resilience.</p>
+                <a href="activities.html" class="card-link-3d">Learn Wellness Routine →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="tilt-card-wrapper">
+            <div class="tilt-card">
+              <div class="tilt-card-img">
+                <img src="assets/gross-motor.jpg" alt="Play & Development">
+                <span class="card-badge-3d">Kinesthetic</span>
+              </div>
+              <div class="tilt-card-body">
+                <h3>Play & Physical Growth</h3>
+                <p>Fostering neuromuscular agility, teamwork sportsmanship, and exuberant social bonding through active play.</p>
+                <a href="activities.html" class="card-link-3d">Explore Sports Arena →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================================
+         3D CORE VALUES
+         ============================================================= -->
+    <section>
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="kicker">✦ Pillars of Character</div>
+          <h2>Values That Shape Great Minds</h2>
+          <p>We nurture qualities that remain anchors of success throughout life's journey.</p>
+        </div>
+
+        <div class="values-3d-grid">
+          <div class="value-3d-box">
+            <div class="val-icon-wrap">📚</div>
+            <h3>Inquisitive Intellect</h3>
+            <p>Cultivating fearless questions, critical evaluation, and a permanent hunger for genuine knowledge.</p>
+          </div>
+
+          <div class="value-3d-box">
+            <div class="val-icon-wrap">🎨</div>
+            <h3>Creative Courage</h3>
+            <p>Empowering children to articulate distinct thoughts, artistic imagination, and original problem-solving.</p>
+          </div>
+
+          <div class="value-3d-box">
+            <div class="val-icon-wrap">🤝</div>
+            <h3>Compassionate Teamwork</h3>
+            <p>Building empathy, inclusive respect, mutual cooperation, and profound societal responsibility.</p>
+          </div>
+
+          <div class="value-3d-box">
+            <div class="val-icon-wrap">🌱</div>
+            <h3>Resilient Health</h3>
+            <p>Balancing rigorous scholarly focus with bodily vitality, mindful stillness, and joyful outdoor sports.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================================
+         3D PHOTO GALLERY TEASER WITH LIGHTBOX
+         ============================================================= -->
+    <section id="gallery">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="kicker">✦ Visual Chronicles</div>
+          <h2>Memorable Moments In 3D Perspective</h2>
+          <p>Filter by activity and click any photograph to expand into our 3D Popout Lightbox.</p>
+        </div>
+
+        <div class="gallery-filter-bar">
+          <button class="gal-filter-btn active" data-filter="all">All Moments</button>
+          <button class="gal-filter-btn" data-filter="academics">Classrooms & Reading</button>
+          <button class="gal-filter-btn" data-filter="labs">Science & Tech</button>
+          <button class="gal-filter-btn" data-filter="cultural">Sports & Culture</button>
+        </div>
+
+        <div class="gallery-3d-grid">
+          
+          <div class="gallery-3d-item" data-cat="academics">
+            <img src="assets/classroom-activity.jpg" alt="Interactive Classroom" loading="lazy">
+            <div class="gallery-overlay-meta">
+              <span class="gal-tag">Academics</span>
+              <strong>Interactive Classroom Discussions</strong>
+            </div>
+          </div>
+
+          <div class="gallery-3d-item" data-cat="labs">
+            <img src="assets/computer-learning.jpg" alt="Computer Learning" loading="lazy">
+            <div class="gallery-overlay-meta">
+              <span class="gal-tag">Tech & AI</span>
+              <strong>Coding & Digital Literacy Lab</strong>
+            </div>
+          </div>
+
+          <div class="gallery-3d-item" data-cat="labs">
+            <img src="assets/science-lab.jpg" alt="Science Laboratory" loading="lazy">
+            <div class="gallery-overlay-meta">
+              <span class="gal-tag">Science</span>
+              <strong>Hands-On Chemical & Physical Discovery</strong>
+            </div>
+          </div>
+
+          <div class="gallery-3d-item" data-cat="cultural">
+            <img src="assets/dance-session.jpg" alt="Dance Performance" loading="lazy">
+            <div class="gallery-overlay-meta">
+              <span class="gal-tag">Arts & Dance</span>
+              <strong>Cultural Heritage & Choreography</strong>
+            </div>
+          </div>
+
+          <div class="gallery-3d-item" data-cat="academics">
+            <img src="assets/group-reading.jpg" alt="Group Reading" loading="lazy">
+            <div class="gallery-overlay-meta">
+              <span class="gal-tag">Literature</span>
+              <strong>Collaborative Library Circle</strong>
+            </div>
+          </div>
+
+          <div class="gallery-3d-item" data-cat="cultural">
+            <img src="assets/yoga-classes.jpg" alt="Yoga Classes" loading="lazy">
+            <div class="gallery-overlay-meta">
+              <span class="gal-tag">Mindfulness</span>
+              <strong>Morning Sunshine Yoga Practice</strong>
+            </div>
+          </div>
+
+          <div class="gallery-3d-item" data-cat="cultural">
+            <img src="assets/morning-assembly.jpg" alt="Morning Assembly" loading="lazy">
+            <div class="gallery-overlay-meta">
+              <span class="gal-tag">Campus Life</span>
+              <strong>Inspiring School Assembly</strong>
+            </div>
+          </div>
+
+          <div class="gallery-3d-item" data-cat="cultural">
+            <img src="assets/nss-programme.jpg" alt="NSS Programme" loading="lazy">
+            <div class="gallery-overlay-meta">
+              <span class="gal-tag">Leadership</span>
+              <strong>National Service Scheme & Community</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 45px;">
+          <a href="gallery.html" class="btn outline" style="padding: 12px 30px;">
+            <span>Browse Complete Photo Vault (15+ Photos) →</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =============================================================
+         3D ENQUIRY & CONTACT SECTION (WITH CONFETTI)
+         ============================================================= -->
+    <section class="cta-3d-section" id="admissions">
+      <div class="container">
+        
+        <div class="cta-3d-card">
+          
+          <div class="cta-info">
+            <h2>Ready To Empower Your Child's Future?</h2>
+            <p>
+              Join the Rajvansh family. Experience a community dedicated to unlocking potential, fostering confidence, and guiding learners toward world-class achievement.
+            </p>
+
+            <div class="contact-quick-list">
+              <div class="contact-quick-item">
+                <span class="c-icon">📍</span>
+                <span>Rajvansh Public Senior Secondary School Campus</span>
+              </div>
+              <div class="contact-quick-item">
+                <span class="c-icon">📞</span>
+                <span>School Office Admissions Desk: +91 98765 43210</span>
+              </div>
+              <div class="contact-quick-item">
+                <span class="c-icon">✉️</span>
+                <span>admissions@rajvanshschool.edu.in</span>
+              </div>
+              <div class="contact-quick-item">
+                <span class="c-icon">⏰</span>
+                <span>Office Hours: Monday - Saturday (8:00 AM - 3:00 PM)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3D Admission Form -->
+          <div class="form-3d-box">
+            
+            <form id="enquiry-form">
+              <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: #fff; margin-bottom: 18px;">
+                Instant Admission Enquiry 🎓
+              </h3>
+
+              <div class="form-group">
+                <label for="enq-name">Student Full Name</label>
+                <input type="text" id="enq-name" class="form-input" placeholder="e.g. Aarav Sharma" required>
+              </div>
+
+              <div class="form-group">
+                <label for="enq-grade">Seeking Admission Grade</label>
+                <select id="enq-grade" class="form-input" style="background: rgba(13,27,52,0.9); cursor: pointer;" required>
+                  <option value="" disabled selected>Select Grade Level</option>
+                  <option value="Pre-Primary">Pre-Primary (Playgroup / KG)</option>
+                  <option value="Primary (1st - 5th)">Primary (Classes 1 - 5)</option>
+                  <option value="Middle (6th - 8th)">Middle School (Classes 6 - 8)</option>
+                  <option value="Secondary (9th - 10th)">Secondary (Classes 9 - 10)</option>
+                  <option value="Senior Secondary (11th - 12th)">Senior Secondary (Science / Commerce / Arts)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="enq-phone">Parent Phone / WhatsApp</label>
+                <input type="tel" id="enq-phone" class="form-input" placeholder="+91 98765 xxxxx" required>
+              </div>
+
+              <div class="form-group">
+                <label for="enq-msg">Parent Query / Notes (Optional)</label>
+                <textarea id="enq-msg" class="form-input" rows="2" placeholder="Tell us about your child's interests or query..."></textarea>
+              </div>
+
+              <button type="submit" class="btn gold" style="width: 100%; justify-content: center; margin-top: 10px;">
+                <span>Submit 3D Enquiry & Get Prospectus ✨</span>
+              </button>
+            </form>
+
+            <!-- Success Overlay with Celebration -->
+            <div class="form-success-overlay" id="form-success-overlay">
+              <div class="success-icon">🎉</div>
+              <h3 style="font-family: var(--font-display); color: #fff; font-size: 1.5rem; margin-bottom: 8px;">
+                Enquiry Received!
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 22px;">
+                Thank you! Our academic counsellor will connect with you on WhatsApp regarding <strong id="success-name" style="color: var(--accent-gold);"></strong> within 24 hours.
+              </p>
+              <button id="reset-form-btn" class="btn outline" style="padding: 8px 20px;">Submit Another Query</button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 3D Photo Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <div class="lightbox-close" id="lightbox-close">✕</div>
+    <div class="lightbox-content-wrap">
+      <img src="" alt="Enlarged Campus View" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption">
+        <span id="lightbox-caption">Rajvansh Public Senior Secondary School</span>
+        <small style="color: var(--accent-cyan); font-weight: 500;">Press ESC to exit</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="back-to-top" title="Back to Top">↑</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div>
+          <div class="brand">
+            <div class="brand-logo-wrap">
+              <img src="assets/school-logo.png" alt="Rajvansh Public School">
+            </div>
+            <div class="brand-text">
+              <span>RAJVANSH PUBLIC</span>
+              <small>Senior Secondary School</small>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Empowering students with holistic academic depth, technological proficiency, ethical virtues, and athletic strength. Building the leaders of 2026 and beyond.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Quick Navigation</h3>
+          <div class="footer-links">
+            <a href="index.html">🏠 Home Portal</a>
+            <a href="about.html">🏛️ About Our Legacy</a>
+            <a href="activities.html">🔬 STEM & Activities</a>
+            <a href="gallery.html">📸 3D Photo Vault</a>
+            <a href="#admissions">📋 Admission Guidelines</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact Campus</h3>
+          <div class="footer-links">
+            <span style="color: var(--text-muted); font-size: 0.92rem;">📍 Central Campus, Senior Wing</span>
+            <span style="color: var(--text-muted); font-size: 0.92rem;">📞 +91 98765 43210</span>
+            <span style="color: var(--text-muted); font-size: 0.92rem;">✉️ principal@rajvanshschool.edu.in</span>
+            <span style="color: var(--accent-gold); font-size: 0.92rem; font-weight: 700;">🚌 Safe GPS Transport Fleet Available</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="year"></span> Rajvansh Public Senior Secondary School. All Rights Reserved.
+        </div>
+        <div style="display: flex; gap: 18px;">
+          <span>Designed with 3D WebGL & Interactive Animations</span>
+          <a href="#" style="color: var(--accent-cyan);">Privacy Policy</a>
+          <a href="#" style="color: var(--accent-cyan);">Terms of Campus</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/three.min.js"></script>
+  <script src="js/gsap.min.js"></script>
+  <script src="js/confetti.browser.min.js"></script>
+  <script src="js/3d-scene.js"></script>
+  <script src="js/3d-interactions.js"></script>
+
+</body>
+</html>
